@@ -1,6 +1,6 @@
 import path from 'path'
 import { Feed } from 'feed'
-import { writeFileSync } from 'fs'
+import { writeFileSync } from 'fs';
 import { createContentLoader, type SiteConfig } from 'vitepress'
 
 const baseUrl = `https://blog.multivolt.energy`
@@ -8,12 +8,12 @@ const baseUrl = `https://blog.multivolt.energy`
 export async function genFeed(config: SiteConfig) {
   const feed = new Feed({
     title: 'MultiVolt Energy blog',
-    description: 'Official MultiVolt Energy Blog - Your go-to source for insights and information about MultiVolt Energy',
+    description: 'MultiVolt Energy blog',
     id: baseUrl,
     link: baseUrl,
     language: 'en',
-    image: 'https://developers.multivolt.energy/images/logo.svg',
-    favicon: `${baseUrl}/favicon.ico`,
+    image: 'https://developers.multividas.com/images/logo.svg',
+    favicon: `https://developers.multividas.com/images/logo.svg`,
     copyright: `Copyright © ${(new Date()).getFullYear()}-present Soulaimane Yahya`
   })
 
@@ -38,14 +38,13 @@ export async function genFeed(config: SiteConfig) {
       author: [
         {
           name: frontmatter.author,
-          link: frontmatter.twitter
-            ? `https://twitter.com/${frontmatter.twitter}`
-            : undefined
+          link: frontmatter.twitter ? `https://twitter.com/${frontmatter.twitter}` : undefined
         }
       ],
-      date: frontmatter.date
+      date: frontmatter.date,
+      image: frontmatter.image,
     })
   }
 
-  writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2())
+  writeFileSync(path.join(config.outDir!, 'feed.rss'), feed.rss2());
 }

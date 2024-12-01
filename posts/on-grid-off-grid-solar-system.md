@@ -1,6 +1,6 @@
 ---
 title: 'On grid Off Grid Solar System'
-date: 2024-02-02
+date: 2024-12-02
 author: Soulaimane Yahya
 gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
 xgravatar: 79a5d0ba1e00cdf55c19b5a4792a043d79369cad45842de56b004983d38c504e
